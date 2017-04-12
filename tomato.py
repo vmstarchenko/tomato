@@ -2,13 +2,10 @@
 
 from colorize import colorize
 from printer import Printer
-from sound import SOUNDS
 from timer import Timer
 
-from os import chdir
-from os.path import dirname
-chdir(dirname(__file__))
 
+import os
 
 
 class Tomato:
@@ -56,20 +53,22 @@ class Tomato:
 
 
 def main():
+    os.chdir(os.path.dirname(__file__))
+
+    print("Это небольшой пример работы таймеров\n")
     # tomato = Tomato(simple_timer_generator)
     tomato = Tomato.create_timers([
         {
-            'length': 30 * 60,
+            'length': 10,
             'name': colorize('Work', 'light-red'),
             'sound': 'long'
         }, {
-            'length': 30 * 60,
+            'length': 10,
             'name': colorize('Rest', 'light-green'),
             'sound': 'long'
         }
     ])
     tomato.start()
-
 
 
 if __name__ == '__main__':

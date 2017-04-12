@@ -1,1 +1,6 @@
 # tomato
+
+# Usage
+```
+./tomato.py
+```
